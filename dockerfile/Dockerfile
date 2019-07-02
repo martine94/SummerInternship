@@ -18,9 +18,9 @@ RUN pip3 install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Ima
 # 3. installing Tensorflow (GPU)
 # see here https://www.tensorflow.org/install/install_linux#InstallingNativePip
 RUN pip3 install tensorflow-gpu
-# RUN pip3 install tensorflow --
 
-# TODO MAKE SURE IT IS >= 1.3 
+# TODO MAKE SURE IT IS >= 1.3, otherwise use 
+# RUN pip3 install tensorflow
 
 # 4. installing X and xvfb so we can SEE the action using a remote desktop access (VNC)
 
@@ -60,18 +60,16 @@ CMD make
 # Tangent Convolution
 CMD cd ..
 CMD cd ..
-RUN git clone https://github.com/tatarchm/tangent_conv.git
+RUN git clone https://github.com/martine94/SummerInternship.git
 CMD cd tangent_conv
 
 # Get Semantic3D dataset 
-CMD python get_data.py /home/Student/SummerIntership/inputFiles /home/Student/SummerIntership/outputFiles semantic3d
+CMD python get_data.py inputFiles outputFiles semantic3d
 
 # Precompute 
-# CMD python tc.py /home/Student/SummerInternship/experiments/semantic3d/dhnrgb/config.json --precompute
+# CMD python tc.py experiments/semantic3d/dhnrgb/config.json --precompute
 
-# CMD python tc.py /home/Student/SummerInternship/experiments/semantic3d/dhnrgb/config.json --train
-
-
+# CMD python tc.py experiments/semantic3d/dhnrgb/config.json --train
 
 
 
