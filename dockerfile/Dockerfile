@@ -19,9 +19,6 @@ RUN pip3 install --upgrade pip setuptools && pip install --upgrade pip
 # see here https://www.tensorflow.org/install/install_linux#InstallingNativePip
 RUN pip3 install tensorflow-gpu==1.3.0
 
-# TODO MAKE SURE IT IS >= 1.3, possibly test
-# RUN pip3 install tensorflow==1.3.0
-
 #ES# 5. installing dependencies for Tangent Convolution
 RUN pip3 install joblib
 
@@ -33,9 +30,8 @@ EXPOSE 8888
 EXPOSE 5900
 
 
-CMD mkdir Student
+CMD ["mkdir", "BananaPoo"]
 CMD cd Student
-
 # Open3D
 CMD git clone https://github.com/tatarchm/Open3D.git
 
@@ -54,12 +50,13 @@ CMD git clone https://github.com/martine94/SummerInternship.git
 CMD cd SummerInternship
 
 # Get Semantic3D dataset 
-CMD python get_data.py inputFiles outputFiles semantic3d
+# COPY get_data.py /
+CMD python3 get_data.py inputFiles outputFiles semantic3d
 
 # Precompute 
-# CMD python tc.py experiments/semantic3d/dhnrgb/config.json --precompute
+# CMD python3 tc.py experiments/semantic3d/dhnrgb/config.json --precompute
 
-# CMD python tc.py experiments/semantic3d/dhnrgb/config.json --train
+# CMD python3 tc.py experiments/semantic3d/dhnrgb/config.json --train
 
 
 # 4. installing X and xvfb so we can SEE the action using a remote desktop access (VNC)
@@ -71,5 +68,5 @@ RUN apt-get install -y x11vnc xvfb fluxbox wmctrl && \
 		rm -rf /cudnn-8.0-linux-x64-v7.tgz && \
 		rm -rf /cuda/
 
-COPY run.sh /
-CMD ["/run.sh", "--allow-root"]
+#COPY run.sh /
+#CMD ["/run.sh", "--allow-root"]
