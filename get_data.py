@@ -14,6 +14,7 @@ import os
 import csv
 import json
 import wget
+import pandas as pd
 
 def get_stanford():
 	class_dict = {"ceiling" : 1, "floor" : 2, "wall" : 3, "beam" : 4, "column" : 5,
@@ -138,23 +139,24 @@ def get_scannet():
 	print("Done.")
 
 def get_semantic3d():
-	base_url = "http://www.semantic3d.net/data/point-clouds/training1/"
-	dl_files = {#"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
-				#"bildstein_station3": "bildstein_station3_xyz_intensity_rgb",
-				#"bildstein_station5" : "bildstein_station5_xyz_intensity_rgb",
-				#"domfountain_station1" : "domfountain_station1_xyz_intensity_rgb",
-				#"domfountain_station2" : "domfountain_station2_xyz_intensity_rgb",
-				#"domfountain_station3" : "domfountain_station3_xyz_intensity_rgb",
-				#"neugasse_station1" : "neugasse_station1_xyz_intensity_rgb",
-				#"sg27_station1" : "sg27_station1_intensity_rgb",
-				#"sg27_station2" : "sg27_station2_intensity_rgb",
-				#"sg27_station4" : "sg27_station4_intensity_rgb",
-				#"sg27_station5" : "sg27_station5_intensity_rgb",
-				#"sg27_station9" : "sg27_station9_intensity_rgb",
-				#"sg28_station4" : "sg28_station4_intensity_rgb",
-				"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb"}
-				#"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"}
-
+	#base_url = "http://www.semantic3d.net/data/point-clouds/training1/"
+	base_url = "http://www.semantic3d.net/data/point-clouds/training1/y"
+	#dl_files = {"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
+#				"bildstein_station3": "bildstein_station3_xyz_intensity_rgb",
+#				"bildstein_station5" : "bildstein_station5_xyz_intensity_rgb",
+#				"domfountain_station1" : "domfountain_station1_xyz_intensity_rgb",
+#				"domfountain_station2" : "domfountain_station2_xyz_intensity_rgb",
+#				"domfountain_station3" : "domfountain_station3_xyz_intensity_rgb",
+#				"neugasse_station1" : "neugasse_station1_xyz_intensity_rgb",
+#				"sg27_station1" : "sg27_station1_intensity_rgb",
+#				"sg27_station2" : "sg27_station2_intensity_rgb",
+#				"sg27_station4" : "sg27_station4_intensity_rgb",
+#				"sg27_station5" : "sg27_station5_intensity_rgb",
+#				"sg27_station9" : "sg27_station9_intensity_rgb",
+#				"sg28_station4" : "sg28_station4_intensity_rgb",
+#				"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb",
+#				"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"}
+	dl_files = {"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb"}
 	labels_url = "http://www.semantic3d.net/data/sem8_labels_training.7z"
 	print("Downloading...")
 	for dl_file in dl_files:
@@ -162,8 +164,7 @@ def get_semantic3d():
 		dl_file_path = os.path.join(args.input_folder, dl_files[dl_file] + ".7z")
 		print(dl_file)
 		if not os.path.exists(dl_file_path):
-			wget.download(base_url + dl_files[dl_file] + ".7z",
-						  out=dl_file_path)
+			wget.download(base_url + dl_files[dl_file] + ".7z", out=dl_file_path)
 
 	labels_file = os.path.join(args.input_folder, "labels.7z")
 	if not os.path.exists(labels_file):
@@ -197,8 +198,8 @@ def get_semantic3d():
 		colors = []
 		labels = []
 
-		#with open("/home/martin/tangent_conv/xaa.txt", "r") as f:
-		with open(os.path.join(args.input_folder, key, "scan.txt"), "r") as f:
+		#with open(os.path.join(args.input_folder, key, "scan.txt"), "r") as f:  # ES
+		with open("/home/easn/PycharmProjects/tangent_conv/xaa.txt", "r") as f:
 			cnt = 0
 			for entry in f:
 				res = [float(c) for c in entry.split()]
@@ -208,7 +209,7 @@ def get_semantic3d():
 					print(cnt)
 				cnt += 1
 		
-		os.mkdir(os.path.join(args.output_folder, key))
+		#os.mkdir(os.path.join(args.output_folder, key))
 		pcd = PointCloud()
 		pcd.points = Vector3dVector(points)
 		pcd.colors = Vector3dVector(colors)
@@ -218,12 +219,17 @@ def get_semantic3d():
 		os.system(cmd)
 
 
+def split_data():
+	cmd = "split -l 10000 " + "/home/easn/PycharmProjects/tangent_conv/xaa.txt"
+	os.system(cmd)
+
 
 if args.dataset == "stanford":
 	get_stanford()
 elif args.dataset == "scannet":
 	get_scannet()
 elif args.dataset == "semantic3d":
+	# split_data()
 	get_semantic3d()
 else:
 	print("Wrong dataset type")
