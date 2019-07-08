@@ -21,7 +21,8 @@ class param:
 def run_precompute(config):
 	p = param(config)
 	make_dir(p.output_dir)
-
+	print(p.dataset_dir)
+	print(str(list_dir(p.dataset_dir)))
 	for scan_name in list_dir(p.dataset_dir):
 		print("First for")
 		for rot in range(0, p.num_rotations):
