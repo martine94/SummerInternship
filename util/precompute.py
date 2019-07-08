@@ -21,16 +21,12 @@ class param:
 def run_precompute(config):
 	p = param(config)
 	make_dir(p.output_dir)
-	print(p.dataset_dir)
-	print(str(list_dir(p.dataset_dir)))
 	for scan_name in list_dir(p.dataset_dir):
-		print("First for")
 		for rot in range(0, p.num_rotations):
 			cloud_file = os.path.join(p.dataset_dir, scan_name, "scan.pcd")
 			label_file = os.path.join(p.dataset_dir, scan_name, "scan.labels")
 			
 			if not os.path.exists(cloud_file) or not os.path.exists(label_file):
-				print("Continue")
 				continue
 
 			if p.noise_level != 0.0:
