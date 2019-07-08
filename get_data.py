@@ -153,7 +153,7 @@ def get_semantic3d():
 				"sg28_station4" : "sg28_station4_intensity_rgb",
 				"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb",
 				"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"}
-	dl_files = {"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb"}
+	#dl_files = {"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb"}
 	labels_url = "http://www.semantic3d.net/data/sem8_labels_training.7z"
 	print("Downloading...")
 	for dl_file in dl_files:
