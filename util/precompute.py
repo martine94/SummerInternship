@@ -13,7 +13,7 @@ class param:
 		self.num_scales = config['pre_num_scales']
 		self.num_rotations = config['pre_num_rotations']
 		self.num_neighbors = config['pre_num_neighbors']
-		self.dataset_dir = get_tc_path() + config['pre_dataset_dir']
+		self.dataset_dir = config['pre_dataset_dir']
 		self.output_dir = config['pre_output_dir']
 		self.interp_method = config['pre_interp_method']
 		self.noise_level = config['pre_noise_level']
