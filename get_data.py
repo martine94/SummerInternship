@@ -146,13 +146,13 @@ def get_semantic3d():
 				#"domfountain_station3" : "domfountain_station3_xyz_intensity_rgb",
 				#"neugasse_station1" : "neugasse_station1_xyz_intensity_rgb",
 				#"sg27_station1" : "sg27_station1_intensity_rgb",
-				#"sg27_station2" : "sg27_station2_intensity_rgb",
-				#"sg27_station4" : "sg27_station4_intensity_rgb",
-				#"sg27_station5" : "sg27_station5_intensity_rgb",
-				#"sg27_station9" : "sg27_station9_intensity_rgb",
-				#"sg28_station4" : "sg28_station4_intensity_rgb"}
+				"sg27_station2" : "sg27_station2_intensity_rgb",
+				"sg27_station4" : "sg27_station4_intensity_rgb",
+				"sg27_station5" : "sg27_station5_intensity_rgb",
+				"sg27_station9" : "sg27_station9_intensity_rgb",
+				"sg28_station4" : "sg28_station4_intensity_rgb"}
 				#"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb",
-				"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"}
+				#"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"}
 	labels_url = "http://www.semantic3d.net/data/sem8_labels_training.7z"
 	print("Downloading...")
 	for dl_file in dl_files:
