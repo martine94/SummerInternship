@@ -9,9 +9,9 @@ from dataset_params import *
 from point_ops import *
 from general_ops import *
 
-#os.system('nvidia-smi -q -d Memory |grep -A4 GPU|grep Free >tmp')
-#os.environ['CUDA_VISIBLE_DEVICES']=str(np.argmax([int(x.split()[2]) for x in open('tmp','r').readlines()]))
-#os.system('rm tmp')
+os.system('nvidia-smi -q -d Memory |grep -A4 GPU|grep Free >tmp')
+os.environ['CUDA_VISIBLE_DEVICES']=str(np.argmax([int(x.split()[2]) for x in open('tmp','r').readlines()]))
+os.system('rm tmp')
 
 class param:
 	def __init__(self, config):
