@@ -13,8 +13,8 @@ data = pd.read_csv(path, sep=" ", header=None)
 data.columns = ["x", "y", "z", "intensity", "r", "g", "b"]
 data = data.drop(columns="intensity")
 
-points = data[["x", "y", "z"]].copy()
-colors = data[["r", "g", "b"]].copy()
+points = data[["x", "y", "z"]]
+colors = data[["r", "g", "b"]]
 colors = colors.div(255.0)
 
 print(colors.head())
