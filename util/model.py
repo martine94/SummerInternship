@@ -118,10 +118,10 @@ class model():
 			scan_num = iter_num % num_train_scans
 			return get_batch_from_full_scan(self.training_data[scan_num], self.par.num_scales, self.par.d_par.class_weights)
 		else:
-			print("iter_num: " + iter_num)
-			print("self.par.batch_array_size: " + self.par.batch_array_size)
+			print("iter_num: " + str(iter_num))
+			print("self.par.batch_array_size: " + str(self.par.batch_array_size))
 			scan_num = iter_num % self.par.batch_array_size
-			print("scan_num: " + scan_num)
+			print("scan_num: " + str(scan_num))
 			if scan_num == 0:
 				print("inside")
 				random_scan = random.randint(0, len(self.training_data)-1)
