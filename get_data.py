@@ -138,7 +138,7 @@ def get_scannet():
 
 def get_semantic3d():
 	base_url = "http://www.semantic3d.net/data/point-clouds/training1/"
-	dl_files = {"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
+	dl_files = {#"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
 				#"bildstein_station3": "bildstein_station3_xyz_intensity_rgb",
 				#"bildstein_station5" : "bildstein_station5_xyz_intensity_rgb",
 				#"domfountain_station1" : "domfountain_station1_xyz_intensity_rgb",
