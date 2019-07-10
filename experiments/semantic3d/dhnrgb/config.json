@@ -17,7 +17,7 @@
 	"_comment":" These parameters for common usage",
 	"_comment":"=========================================",
 	"co_train_file":"experiments/semantic3d/train.txt",
-	"co_test_file":"experiments/semantic3d/validation.txt",
+	"co_test_file":"/home/student/SummerInternship/experiments/semantic3d/validation.txt",
 	"co_experiment_dir":"experiments/semantic3d/dhnrgb/",
 	"co_output_dir":"outputs",
 
