@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description='Choose scan')
 parser.add_argument('key', type=str, metavar='N', help='key to scan, example: sg27_station1')
 args = parser.parse_args()
 
-path = os.path.join(/home/student/SummerInternship/inputFiles/, args.key, scan.txt)
+path = os.path.join(inputFiles/, args.key, scan.txt)
 
 data = pd.read_csv(path, sep=" ", header=None)
 data.columns = ["x", "y", "z", "intensity", "r", "g", "b"]
@@ -26,5 +26,5 @@ pcd = o3d.PointCloud()
 pcd.points = o3d.Vector3dVector(points)
 pcd.colors = o3d.Vector3dVector(colors)
 
-path = os.path.join(/home/student/SummerInternship/inputFiles/, args.key, scan.pcd)
+path = os.path.join(inputFiles/, args.key, scan.pcd)
 o3d.io.write_point_cloud(path, pcd)
