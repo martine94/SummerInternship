@@ -13,18 +13,9 @@ data = pd.read_csv(path, sep=" ", header=None)
 data.columns = ["x", "y", "z", "intensity", "r", "g", "b"]
 data = data.drop(columns="intensity")
 
-points = data[["x", "y", "z"]]
-colors = data[["r", "g", "b"]]
-colors = colors.div(255.0)
-
-print(colors.head())
-
-points = points.values
-colors = colors.values
-
-pcd = o3d.PointCloud()
-pcd.points = o3d.Vector3dVector(points)
-pcd.colors = o3d.Vector3dVector(colors)
+data.to_csv(r'tmp.xyzrgb', header=False, index=False, sep=" ", mode="a")
+pcd = o3d.io.read_point_cloud('tmp.xyzrgb')
+#os.system("rm tmp.xyzrgb")
 
 path = os.path.join(inputFiles/, args.key, scan.pcd)
 o3d.io.write_point_cloud(path, pcd)
