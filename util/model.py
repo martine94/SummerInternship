@@ -48,7 +48,8 @@ class param:
 		###
 
 		if isinstance(self.d_par, semantic3d_params):
-			self.data_sampling_type = 'part'
+			#self.data_sampling_type = 'part'
+			self.data_sampling_type = 'full'  	# ES
 		else:
 			self.data_sampling_type = 'full'
 
@@ -118,7 +119,6 @@ class model():
 			scan_num = iter_num % num_train_scans
 			return get_batch_from_full_scan(self.training_data[scan_num], self.par.num_scales, self.par.d_par.class_weights)
 		else:
-			print("iter_num: " + str(iter_num))
 			print("self.par.batch_array_size: " + str(self.par.batch_array_size))
 			scan_num = iter_num % self.par.batch_array_size
 			print("scan_num: " + str(scan_num))
