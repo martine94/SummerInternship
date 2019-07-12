@@ -388,10 +388,15 @@ def run_net(config, mode):
 	if mode == "train":
 		nn.load_data("test")
 		nn.load_data("train")
+		print('Building model')
 		nn.build_model(par.batch_size)
+		print('Precompute validation batches')
 		nn.precompute_validation_batches()
+		print('Initializing model')
 		nn.initialize_model()
+		print('Loading snapshot')
 		nn.load_snapshot()
+		print('Training')
 		nn.train()
 	elif mode == "test":
 		nn.load_data("test")
