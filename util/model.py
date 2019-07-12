@@ -101,14 +101,10 @@ class model():
 
 	def precompute_validation_batches(self):
 		self.validation_batches = []
-		print('Entering for loop through: ' + str(self.test_data))
 		for test_scan in self.test_data:
 			if self.par.data_sampling_type == 'part':
-				print('Getting batch array for ' + str(test_scan) + ' and ' + str(self.par))
 				batch_array = get_batch_array(test_scan, self.par)
-				print('Entering for loop trough: ' + str(batch_array))
 				for b in batch_array:
-					print('if: ' + str(np.shape(b.colors[0])[0] <= self.par.batch_size))
 					if np.shape(b.colors[0])[0] <= self.par.batch_size:
 						self.validation_batches.append(b)
 			else:
