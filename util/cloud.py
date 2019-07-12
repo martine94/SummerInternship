@@ -307,7 +307,8 @@ def get_scan_part_out(par, point=None, sample_type='POINT'):
 def get_batch_array(scan_var, par, points=None):
 	global scan
 	scan = scan_var
-	num_cores = multiprocessing.cpu_count()
+	#num_cores = multiprocessing.cpu_count()  
+	num_cores = 1 # ES
 
 	if points is None:
 		pts = []
