@@ -48,8 +48,8 @@ class param:
 		###
 
 		if isinstance(self.d_par, semantic3d_params):
-			#self.data_sampling_type = 'part'
-			self.data_sampling_type = 'full'  	# ES
+			self.data_sampling_type = 'part'
+			#self.data_sampling_type = 'full'  	# ES
 		else:
 			self.data_sampling_type = 'full'
 
