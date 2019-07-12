@@ -101,10 +101,10 @@ class model():
 
 	def precompute_validation_batches(self):
 		self.validation_batches = []
-		print('Entering for loop through: ' + self.test_data)
+		print('Entering for loop through: ' + str(self.test_data))
 		for test_scan in self.test_data:
 			if self.par.data_sampling_type == 'part':
-				print('Getting batch array for ' + test_scan + ' and ' + self.par)
+				print('Getting batch array for ' + test_scan + ' and ' + str(self.par))
 				batch_array = get_batch_array(test_scan, self.par)
 				print('Entering for loop trough: ' + str(batch_array))
 				for b in batch_array:
