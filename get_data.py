@@ -200,7 +200,7 @@ def get_semantic3d():
 		df = dd.read_csv(os.path.join(args.input_folder, key, "scan.txt"), sep=" ", header=None)
 		denom = len(df)/50000000
 		df = df.sample(frac=1/denom)
-		os.system('rm ' + os.path.join(args.input_folder, key, "scan.txt"))
+		os.system('vm ' + os.path.join(args.input_folder, key, "scan.txt") + os.path.join(args.input_folder, key, "fullScan.txt"))
 		
 		print('Split up dask.dataframe and write it to temporary files in new folder tmp.')
 		os.system('mkdir tmp')
