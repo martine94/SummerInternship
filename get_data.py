@@ -204,7 +204,7 @@ def get_semantic3d():
 		
 		print('Split up dask.dataframe and write it to temporary files in new folder tmp.')
 		os.system('mkdir tmp')
-		df.to_csv('tmp/tmp-*.xyzrgb', header=False, index=False, sep=" ", mode="a")
+		df.to_csv('tmp/tmp-*.txt', header=False, index=False, sep=" ", mode="a")
 
 		print('Merging files')
 		directory = os.path.join(args.input_folder, key, 'tmp')
