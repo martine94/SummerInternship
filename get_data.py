@@ -14,7 +14,7 @@ import os
 import csv
 import json
 import wget
-import dask.dataframe as dd
+
 def get_stanford():
 	class_dict = {"ceiling" : 1, "floor" : 2, "wall" : 3, "beam" : 4, "column" : 5,
 				  "window" : 6, "door" : 7, "table" : 8, "chair" : 9, "sofa" : 10,
@@ -139,21 +139,21 @@ def get_scannet():
 
 def get_semantic3d():
 	base_url = "http://www.semantic3d.net/data/point-clouds/training1/"
-	dl_files = {#"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
-		    #"bildstein_station3": "bildstein_station3_xyz_intensity_rgb",
-		    #"bildstein_station5" : "bildstein_station5_xyz_intensity_rgb",
-		    #"domfountain_station1" : "domfountain_station1_xyz_intensity_rgb",
-		    #"domfountain_station2" : "domfountain_station2_xyz_intensity_rgb",
-		    #"domfountain_station3" : "domfountain_station3_xyz_intensity_rgb",
-		    #"neugasse_station1" : "neugasse_station1_xyz_intensity_rgb",
-		    "sg27_station1" : "sg27_station1_intensity_rgb",
-		    "sg27_station2" : "sg27_station2_intensity_rgb",
-		    "sg27_station4" : "sg27_station4_intensity_rgb",
-		    "sg27_station5" : "sg27_station5_intensity_rgb",
-		    "sg27_station9" : "sg27_station9_intensity_rgb",
-		    "sg28_station4" : "sg28_station4_intensity_rgb"
-		    #"untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb",
-		    #"untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"
+	dl_files = {"bildstein_station1" : "bildstein_station1_xyz_intensity_rgb",
+		    "bildstein_station3": "bildstein_station3_xyz_intensity_rgb",
+		    "bildstein_station5" : "bildstein_station5_xyz_intensity_rgb",
+		    "domfountain_station1" : "domfountain_station1_xyz_intensity_rgb",
+		    "domfountain_station2" : "domfountain_station2_xyz_intensity_rgb",
+		    "domfountain_station3" : "domfountain_station3_xyz_intensity_rgb",
+		    "neugasse_station1" : "neugasse_station1_xyz_intensity_rgb",
+		    #"sg27_station1" : "sg27_station1_intensity_rgb",
+		    #"sg27_station2" : "sg27_station2_intensity_rgb",
+		    #"sg27_station4" : "sg27_station4_intensity_rgb",
+		    #"sg27_station5" : "sg27_station5_intensity_rgb",
+		    #"sg27_station9" : "sg27_station9_intensity_rgb",
+		    #"sg28_station4" : "sg28_station4_intensity_rgb"
+		    "untermaederbrunnen_station1" : "untermaederbrunnen_station1_xyz_intensity_rgb",
+		    "untermaederbrunnen_station3" : "untermaederbrunnen_station3_xyz_intensity_rgb"
 		    }
 	labels_url = "http://www.semantic3d.net/data/sem8_labels_training.7z"
 	print("Downloading...")
@@ -195,28 +195,8 @@ def get_semantic3d():
 		points = []
 		colors = []
 		labels = []
-		
-		# Take a sample of the scan.txt file (for sg files which are otherwise to large)
-		df = dd.read_csv(os.path.join(args.input_folder, key, "scan.txt"), sep=" ", header=None)
-		denom = len(df)/50000000
-		df = df.sample(frac=1/denom)
-		
-		print('Split up dask.dataframe and write it to temporary files in new folder tmp.')
-		os.system('mkdir tmp')
-		df.to_csv('tmp/tmp-*.txt', header=False, index=False, sep=" ", mode="a")
 
-		print('Merging files')
-		directory = "tmp"
-		output = os.path.join(args.input_folder, key, "small_scan.txt")
-		os.system('touch ' + output)
-		for file in os.listdir(directory):
-			f = os.path.join(directory, file)
-			if f is not output and os.path.isfile(f):
-				os.system('cat ' + f + ' >> ' + output)
-				os.system('rm ' + f)
-		os.system('rm -rf tmp')
-
-		with open(os.path.join(args.input_folder, key, "small_scan.txt"), "r") as f:
+		with open(os.path.join(args.input_folder, key, "scan.txt"), "r") as f:
 			cnt = 0
 			for entry in f:
 				res = [float(c) for c in entry.split()]
