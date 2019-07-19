@@ -200,14 +200,14 @@ def get_semantic3d():
 		df = dd.read_csv(os.path.join(args.input_folder, key, "scan.txt"), sep=" ", header=None)
 		denom = len(df)/50000000
 		df = df.sample(frac=1/denom)
-		os.system('vm ' + os.path.join(args.input_folder, key, "scan.txt") + os.path.join(args.input_folder, key, "fullScan.txt"))
+		os.system('mv ' + os.path.join(args.input_folder, key, "scan.txt") + os.path.join(args.input_folder, key, "fullScan.txt"))
 		
 		print('Split up dask.dataframe and write it to temporary files in new folder tmp.')
 		os.system('mkdir tmp')
 		df.to_csv('tmp/tmp-*.txt', header=False, index=False, sep=" ", mode="a")
 
 		print('Merging files')
-		directory = os.path.join(args.input_folder, key, 'tmp')
+		directory = "tmp"
 		output = os.path.join(args.input_folder, key, "scan.txt")
 		os.system('touch ' + output)
 		for file in os.listdir(directory):
