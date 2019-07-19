@@ -8,7 +8,7 @@
 	"pre_num_rotations":1,
 	"pre_num_neighbors":1,
 	"pre_noise_level":0.0,
-	"pre_dataset_dir":"outputFiles/",
+	"pre_dataset_dir":"data/raw/semantic3d/",
 	"pre_output_dir":"data/param/semantic3d/0p1/",
 	"pre_interp_method":"depth_densify_nearest_neighbor",
 	"pre_dataset_param":"semantic3d",
