@@ -27,6 +27,8 @@ def run_precompute(config):
 		for rot in range(0, p.num_rotations):
 			print(scan_name)
 			print(p.dataset_dir)
+			print(cloud_file)
+			print(label_file)
 			cloud_file = os.path.join(p.dataset_dir, scan_name, "scan.pcd")
 			label_file = os.path.join(p.dataset_dir, scan_name, "scan.labels")
 			
