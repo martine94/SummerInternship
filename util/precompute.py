@@ -27,6 +27,8 @@ def run_precompute(config):
 		for rot in range(0, p.num_rotations):
 			cloud_file = os.path.join(p.dataset_dir, scan_name, "scan.pcd")
 			label_file = os.path.join(p.dataset_dir, scan_name, "scan.labels")
+			print(cloud_file)
+			print(label_file)
 			
 			if not os.path.exists(cloud_file) or not os.path.exists(label_file):
 				print("continue")
