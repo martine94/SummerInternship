@@ -11,7 +11,7 @@
 	"pre_dataset_dir":"outputFiles",
 	"pre_output_dir":"data/param/forkdata/0p05/",
 	"pre_interp_method":"depth_densify_nearest_neighbor",
-	"pre_dataset_param":"stanford",
+	"pre_dataset_param":"forkdata",
 
 	"_comment":"=========================================",
 	"_comment":" These parameters for common usage",
