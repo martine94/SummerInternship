@@ -40,7 +40,7 @@ def run_precompute(config):
 			else:
 				print("processing scan: %s, rot: %d" % (scan_name, rot))
 
-			print("SUCCESS")
+			print("SUCCESS\n")
 			pcd_colors = read_point_cloud(cloud_file)
 			pcd_labels = read_point_cloud(cloud_file)
 			txt_labels = read_txt_labels(label_file)
