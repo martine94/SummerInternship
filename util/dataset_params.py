@@ -73,12 +73,12 @@ class forkdata_params:
 		self.class_weights = -np.log(self.class_freq / 100.0)
 		self.num_classes = len(self.class_freq) + 1
 		self.color_map = [[255, 255, 255], # unlabeled (white)
-			 			  [128, 128, 128], # pallet
+			 			  [128, 128, 128]] # pallet
 			 			  #[255, 225, 25],   # natural terrain (yellow)
 			 			  #[124, 152, 0], 	  # high vegetation (dark green)
 			 			  #[170, 110, 40],   # low vegetation (light green)
 			 			  #[128, 0, 0], 	  # building (red)
 			 			  #[245, 130, 48],   # hardscape (purple)
 			 			  #[250, 190, 190], # scanning artifacts (light blue)
-			 			  [0, 130, 200]]  # notpallet
+			 			  #[0, 130, 200]]  # notpallet
 		#, 24.391, 6.845, 5.153, 14.673, 4.23, 2.7 ska kanske in i self.class_freq
