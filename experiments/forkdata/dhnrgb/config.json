@@ -19,7 +19,7 @@
 	"co_train_file":"experiments/forkdata/train.txt",
 	"co_test_file":"experiments/forkdata/validation.txt",
 	"co_experiment_dir":"experiments/forkdata/dhnrgb",
-	"co_output_dir":"outputFiles",
+	"co_output_dir":"outputFiles/",
 
 	"_comment":"=========================================",
 	"_comment":" These parameters for training/testing",
