@@ -40,6 +40,6 @@
 	"_comment":" These is for evaluation",
 	"_comment":"=========================================",
 	"eval_scan_file":"scan.pcd",
-	"eval_label_file":"scan.labels",
-	"eval_output_file":"extrapolated.labels"
+	"eval_label_file":"scan.label",
+	"eval_output_file":"extrapolated.label"
 }
