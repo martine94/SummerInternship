@@ -31,7 +31,7 @@
 	"tt_test_iter":1000,
 	"tt_reload_iter":5000,
 	"tt_max_iter_count":500000,
-	"tt_batch_size":53,
+	"tt_batch_size":20000,
 	"tt_valid_rad":6.0,
 	"tt_filter_size":3,
 	"tt_batch_array_size":300,
