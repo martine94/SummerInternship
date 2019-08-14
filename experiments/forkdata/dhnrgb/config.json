@@ -34,7 +34,7 @@
 	"tt_batch_size":20000,
 	"tt_valid_rad":6.0,
 	"tt_filter_size":3,
-	"tt_batch_array_size":53,
+	"tt_batch_array_size":300,
 
 	"_comment":"=========================================",
 	"_comment":" These is for evaluation",
