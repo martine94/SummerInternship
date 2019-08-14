@@ -19,6 +19,8 @@ class param:
 		dataset_type = config['pre_dataset_param']
 		if dataset_type == "stanford":
 			self.d_par = stanford_params()
+		elif dataset_type == "forkdata":
+			self.d_par = forkdata_params()
 		elif dataset_type == "scannet":
 			self.d_par = scannet_params()
 		elif dataset_type == "semantic3d":
