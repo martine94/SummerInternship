@@ -28,6 +28,8 @@ class param:
 			self.d_par = stanford_params()
 		elif dataset_type == "scannet":
 			self.d_par = scannet_params()
+		elif dataset_type == "forkdata":
+			self.d_par = forkdata_params()
 		elif dataset_type == "semantic3d":
 			self.d_par = semantic3d_params()
 		self.input_type = config['tt_input_type']
