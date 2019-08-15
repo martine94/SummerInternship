@@ -2,7 +2,7 @@
 	"_comment":"=========================================",
 	"_comment":" These parameters for precomputation",
 	"_comment":"=========================================",
-	"pre_min_cube_size":0.3,
+	"pre_min_cube_size":1,
 	"pre_filter_size":3,
 	"pre_num_scales":3,
 	"pre_num_rotations":1,
