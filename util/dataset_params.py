@@ -72,6 +72,6 @@ class forkdata_params:
 		self.class_freq = np.asarray([0.782, 6.845])
 		self.class_weights = -np.log(self.class_freq / 100.0)
 		self.num_classes = len(self.class_freq) + 1
-		self.color_map = [[[0, 130, 200]], # unlabeled (white)
+		self.color_map = [[0, 130, 200], # unlabeled (white)
 			 			  [255, 225, 25]   # natural terrain (yellow)
 			 			  ]  # cars (pink)
