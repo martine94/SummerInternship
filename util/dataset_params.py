@@ -71,7 +71,7 @@ class forkdata_params:
 	def __init__(self):
 		self.class_freq = np.asarray([41.227, 24.391])
 		self.class_weights = -np.log(self.class_freq / 100.0)
-		self.num_classes = len(self.class_freq) + 1
+		self.num_classes = 2
 		self.color_map = [[255, 225, 25], # unlabeled (yellow)
 			 			  [245, 130, 48]] # pallet
 			 			  #[255, 225, 25],   # natural terrain (yellow)
