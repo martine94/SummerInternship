@@ -69,16 +69,15 @@ class semantic3d_params:
 		
 class forkdata_params:
 	def __init__(self):
-		self.class_freq = np.asarray([41.227, 24.391])
+		self.class_freq = np.asarray([41.227, 24.391, 6.845, 5.153, 14.673, 4.23, 2.7, 0.782])
 		self.class_weights = -np.log(self.class_freq / 100.0)
-		self.num_classes = 2
-		self.color_map = [[255, 225, 25], # unlabeled (yellow)
-			 			  [245, 130, 48]] # pallet
-			 			  #[255, 225, 25],   # natural terrain (yellow)
-			 			  #[124, 152, 0], 	  # high vegetation (dark green)
-			 			  #[170, 110, 40],   # low vegetation (light green)
-			 			  #[128, 0, 0], 	  # building (red)
-			 			  #[245, 130, 48],   # hardscape (purple)
-			 			  #[250, 190, 190], # scanning artifacts (light blue)
-			 			  #[0, 130, 200]]  # notpallet
-		#, 24.391, 6.845, 5.153, 14.673, 4.23, 2.7 ska kanske in i self.class_freq
+		self.num_classes = len(self.class_freq) + 1
+		self.color_map = [[255, 255, 255], # unlabeled (white)
+			 			  [128, 128, 128], # man made terrain (grey)
+			 			  [255, 225, 25],   # natural terrain (yellow)
+			 			  [124, 152, 0], 	  # high vegetation (dark green)
+			 			  [170, 110, 40],   # low vegetation (light green)
+			 			  [128, 0, 0], 	  # building (red)
+			 			  [245, 130, 48],   # hardscape (purple)
+			 			  [250, 190, 190], # scanning artifacts (light blue)
+			 			  [0, 130, 200]]  # cars (pink)
