@@ -33,7 +33,7 @@
 	"tt_max_iter_count":500000,
 	"tt_batch_size":200000,
 	"tt_valid_rad":6.0,
-	"tt_filter_size":1,
+	"tt_filter_size":3,
 	"tt_batch_array_size":300,
 
 	"_comment":"=========================================",
