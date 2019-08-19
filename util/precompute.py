@@ -44,7 +44,7 @@ def run_precompute(config):
 			pcd_colors = read_point_cloud(cloud_file)
 			pcd_labels = read_point_cloud(cloud_file)
 			txt_labels = read_txt_labels(label_file)
-			for(int x = 0; x < 160 ; x++){
+			for(x = 0; x < 160 ; x++){
 			print(txt_labels[x] \n);	
 			}
 			theta = rot * 2 * math.pi / p.num_rotations
