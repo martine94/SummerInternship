@@ -3,7 +3,7 @@
 	"_comment":" These parameters for precomputation",
 	"_comment":"=========================================",
 	"pre_min_cube_size":0.05,
-	"pre_filter_size":3,
+	"pre_filter_size":1,
 	"pre_num_scales":3,
 	"pre_num_rotations":1,
 	"pre_num_neighbors":1,
@@ -33,7 +33,7 @@
 	"tt_max_iter_count":500000,
 	"tt_batch_size":200000,
 	"tt_valid_rad":6.0,
-	"tt_filter_size":3,
+	"tt_filter_size":1,
 	"tt_batch_array_size":300,
 
 	"_comment":"=========================================",
