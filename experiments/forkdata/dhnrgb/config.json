@@ -5,7 +5,7 @@
 	"pre_min_cube_size":0.05,
 	"pre_filter_size":1,
 	"pre_num_scales":3,
-	"pre_num_rotations":7,
+	"pre_num_rotations":1,
 	"pre_num_neighbors":1,
 	"pre_noise_level":0.0,
 	"pre_dataset_dir":"outputFiles/",
