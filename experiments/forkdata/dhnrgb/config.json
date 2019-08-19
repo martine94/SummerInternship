@@ -8,7 +8,7 @@
 	"pre_num_rotations":1,
 	"pre_num_neighbors":1,
 	"pre_noise_level":0.0,
-	"pre_dataset_dir":"outputFiles/outputFiles/",
+	"pre_dataset_dir":"outputFiles/",
 	"pre_output_dir":"data/param/forkdata/0p05/outputFiles/",
 	"pre_interp_method":"depth_densify_nearest_neighbor",
 	"pre_dataset_param":"forkdata",
