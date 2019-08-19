@@ -44,9 +44,9 @@ def run_precompute(config):
 			pcd_colors = read_point_cloud(cloud_file)
 			pcd_labels = read_point_cloud(cloud_file)
 			txt_labels = read_txt_labels(label_file)
-			for(x = 0; x < 160 ; x++){
-			print(txt_labels[x] \n);	
-			}
+			for x in txt_labels
+			print(x);	
+			
 			theta = rot * 2 * math.pi / p.num_rotations
 
 			rot_matrix = np.asarray(
