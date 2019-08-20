@@ -73,6 +73,6 @@ class forkdata_params:
 		self.class_weights = -np.log(self.class_freq / 100.0)
 		self.num_classes = len(self.class_freq) + 1
 		self.color_map = [[  0,   0,   0], # unlabeled (white)
-						  [0, 130, 200], # second label (dont know color)
-			 			  [255, 225, 25]   # natural terrain (yellow)
-			 			  ]  # cars (pink)
+						  [40, 150, 200], # NotAPalletLabel (blueish)
+			 			  [255, 225, 25]]   # Palletlabel(yellow)
+			 			  
