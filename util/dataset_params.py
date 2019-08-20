@@ -69,7 +69,7 @@ class semantic3d_params:
 		
 class forkdata_params:
 	def __init__(self):
-		self.class_freq = np.asarray([73.45, 26.55])
+		self.class_freq = np.asarray([73.45, 26.55]) #This value has been calculated from one of the .labels-files
 		self.class_weights = -np.log(self.class_freq / 100.0)
 		self.num_classes = len(self.class_freq) + 1
 		self.color_map = [[  0,   0,   0], # unlabeled (white)
