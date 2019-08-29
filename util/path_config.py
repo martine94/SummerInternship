@@ -1,7 +1,7 @@
 import sys
 
-open3d_path = '/media/local-data/Student/Open3D/build/lib/'
-tc_path = '/media/local-data/Student/tangent_conv/SummerInternship/'
+open3d_path = '/home/student/Open3D/build/lib/'
+tc_path = '/home/student/SummerInternship/'
 
 sys.path.append(open3d_path)
 from py3d import *
