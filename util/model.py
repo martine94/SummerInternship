@@ -94,13 +94,15 @@ class model():
 				rot = 0
 			s = ScanData()
 			s.load(os.path.join(s_path, str(rot)), self.par.num_scales)
-			s.remap_depth(vmin=-self.par.conv_rad[0], vmax=self.par.conv_rad[0])
-			s.remap_normals()
-			if mode == "train":
-				self.training_data.append(s)
-			else:
-				self.test_data.append(s)
-			cnt += 1
+			if(s.data){
+				s.remap_depth(vmin=-self.par.conv_rad[0], vmax=self.par.conv_rad[0])
+				s.remap_normals()
+				if mode == "train":
+					self.training_data.append(s)
+				else:
+					self.test_data.append(s)
+				cnt += 1
+			}
 
 	def precompute_validation_batches(self):
 		self.validation_batches = []
