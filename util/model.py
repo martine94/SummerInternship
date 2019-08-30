@@ -102,6 +102,8 @@ class model():
 				else:
 					self.test_data.append(s)
 				cnt += 1	
+			else:
+				print("Error, no pointcloud")
 
 	def precompute_validation_batches(self):
 		self.validation_batches = []
