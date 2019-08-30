@@ -101,7 +101,8 @@ class model():
 					self.training_data.append(s)
 				else:
 					self.test_data.append(s)
-				cnt += 1	
+				cnt += 1
+				print(cnt)
 			else:
 				print("Error, no pointcloud")
 
